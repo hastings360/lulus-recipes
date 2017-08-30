@@ -1,0 +1,3 @@
+<div *ngFor="let topTenCategory of this.topTenCategories">
+    <a class="col-xs-6 cat-links" [routerLink]="['/category-view', topTenCategory._id]" ><h4 >{{topTenCategory._id}}</h4></a>
+</div>

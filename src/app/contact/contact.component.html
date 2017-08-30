@@ -1,0 +1,49 @@
+<section id="contact-message" class="col-md-6 col-md-offset-3">
+  <h1>Contact</h1>
+  <p>Please leave your info and I will get back to you as soon as I can</p>
+</section>
+<section id="contact-form-container" class="col-md-8 col-md-offset-2">
+  <form   id="contact-form"
+          [formGroup]="contactForm" 
+          (ngSubmit)="onSubmit(contactForm.value)">
+
+          <div class="form-group">    
+            <label for="name">Name:</label>
+            <input id="name" type="text" class="form-control" [formControl]="contactForm.controls['name']" [class.error]="!contactForm.controls['name'].valid">
+            <div class="error-message" *ngIf="!contactForm.controls['name'].valid">Please type your full name</div>
+          </div>
+
+          <div class="form-group">    
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" [formControl]="contactForm.controls['email']" [class.error]="!contactForm.controls['email'].valid">
+            <div class="error-message" *ngIf="!contactForm.controls['email'].valid">Please provide your email address to be contacted</div>
+          </div>
+
+          <div class="form-group">    
+            <label for="phone">Phone:</label>
+            <input id="phone" type="text" class="form-control" [formControl]="contactForm.controls['phone']" [class.error]="!contactForm.controls['phone'].valid">
+            <div class="error-message" *ngIf="!contactForm.controls['phone'].valid">Please provide a phone number if you like</div>
+          </div>
+
+          <div class="form-group">    
+            <label for="message">Message:</label>
+            <input id="message" type="text" class="form-control" [formControl]="contactForm.controls['message']" [class.error]="!contactForm.controls['message'].valid">
+            <div class="error-message" *ngIf="!contactForm.controls['message'].valid">Leave a message</div>
+          </div>
+
+          <button type="submit" id="contact-submit" class="btn col-xs-2 col-xs-offset-5" *ngIf="contactForm.valid"><strong>Send</strong></button>
+          
+  </form>
+ 
+    <!--splash page for email sent-->
+    <div *ngIf="received" class="mail-message img-responsive">
+      <p>Thank you for making an inquiry!</p>
+      <a routerLink="/welcome">Back to welcome page</a>
+    </div>
+    <!--splash page for email sent-->
+    <div *ngIf="error" class="mail-message img-responsive">
+      <p>There seems to be an issue with the email server.  Please try again soon.</p>
+      <a routerLink="/welcome">Back to home page</a>
+    </div>
+
+</section>

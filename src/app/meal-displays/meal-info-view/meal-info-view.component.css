@@ -1,0 +1,10 @@
+.meal-left-column p{
+    color: rgba(149,160,20,1);
+    font-size: 1.5em;
+}
+.ingredient-list{
+    display: inline-block;
+}
+.head-text{
+    color: rgba(149,160,20,1);
+}

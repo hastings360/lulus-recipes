@@ -1,0 +1,11 @@
+<section class="clearfix">
+    <div  class="col-sm-6 col-sm-offset-3">
+        <h1 class="non-welcome-h1">{{categoryPassedInByUrl}}</h1>
+    </div>
+</section>
+<section class="clearfix">
+      <app-brief-view class="col-md-4 col-sm-6"
+          *ngFor="let meal of specifiedCategoryMeals"
+          [briefMeal]="meal"
+      >...Loading</app-brief-view>
+</section>

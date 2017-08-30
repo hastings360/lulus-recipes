@@ -1,0 +1,11 @@
+<div class="clearfix">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="name text-center">{{mealNamePassedInByUrl}}</h1>
+    </div>
+</div>
+<div *ngIf='specifiedMeal' class="clearfix">
+    <app-meal-image-view [specifiedMeal]='specifiedMeal'>...Loading</app-meal-image-view>
+</div>
+<div *ngIf='specifiedMeal' class="clearfix">
+    <app-meal-info-view [specifiedMeal]='specifiedMeal'>...Loading</app-meal-info-view>
+</div>
