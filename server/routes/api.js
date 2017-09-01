@@ -3,12 +3,12 @@ const router = express.Router();
 
 const nodemailer = require('nodemailer');//mail API
 const MongoClient = require('mongodb').MongoClient;//db API
-const url = "mongodb://localhost:27017/recipe-finder";//db API
+const url = "mongodb://localhost:27017/lulus-recipes";//db API
 let data;//db API
 
 //root APi 
 router.get('/', (req, res) => {
-  res.send('api works');
+  res.send('lulus-recipe api works');
 });
 
 //mail API
@@ -38,7 +38,7 @@ router.post('/recipe-mail', (req, res) =>{
                   from: contents.email,
                   to: 'hastings360@gmail.com',
                   subject: contents.name, 
-                  html: '<h1>Recipe Finder Message</h1>' + contents
+                  html: "<h1>Lulu's Recipe Message</h1>" + contents
                 };
                 //sends
                 transporter.sendMail(mailOptions,(error,info) =>{
@@ -99,7 +99,7 @@ router.get('/recipe-all-categories', (req, res) =>{
 //meals by category database query API
 router.get('/recipe-meals-by-category',(req, res) =>{
   console.log('recipe-meals-by-category queried');
-  console.log(req.query.category);
+
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
     db.collection("meals").find({category: req.query.category}).toArray(function(err, result){
@@ -113,7 +113,7 @@ router.get('/recipe-meals-by-category',(req, res) =>{
 //meal by name database query API
 router.get('/recipe-meal-by-name',(req, res) =>{
   console.log('recipe-meal-by-name queried');
-  console.log(req.query.name);
+
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
     db.collection("meals").find({name: req.query.name}).toArray(function(err, result){
