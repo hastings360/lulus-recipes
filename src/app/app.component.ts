@@ -1,8 +1,6 @@
 import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 
-Title
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
