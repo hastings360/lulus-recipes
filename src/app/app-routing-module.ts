@@ -8,7 +8,6 @@ import { CategoryViewComponent } from './meal-displays/category-view/category-vi
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'welcome'},
