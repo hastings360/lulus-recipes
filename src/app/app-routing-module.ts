@@ -12,18 +12,18 @@ import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'welcome'},
-  { path: 'welcome', component: WelcomeComponent, data: {title: 'Recipe Finder: Welcome'}},
-  { path: 'meal-view/:itemNumber', component: SingleFullViewComponent, data: {title: 'Recipe Finder: Meal View'}},
-  { path: 'category-view/:category', component: CategoryViewComponent, data: {title: 'Recipe Finder: Category View'}},
-  { path: 'single-full-view/:name', component: SingleFullViewComponent, data: {title: 'Recipe Finder: Single Full View'}},
-  { path: 'contribute', component: ContributeComponent, data: {title: 'Recipe Finder: Contribute'}},
-  { path: 'contact', component: ContactComponent, data: {title: 'Recipe Finder: Contact'}},
-  { path: 'about', component: AboutComponent, data: {title: 'Recipe Finder: About'}}
+  { path: 'welcome', component: WelcomeComponent, data: {title: 'Lulus-Recipes: Welcome'}},
+  { path: 'meal-view/:itemNumber', component: SingleFullViewComponent, data: {title: 'Lulus-Recipes: Meal View'}},
+  { path: 'category-view/:category', component: CategoryViewComponent, data: {title: 'Lulus-Recipes: Category View'}},
+  { path: 'single-full-view/:name', component: SingleFullViewComponent, data: {title: 'Lulus-Recipes: Single Full View'}},
+  { path: 'contribute', component: ContributeComponent, data: {title: 'Lulus-Recipes: Contribute'}},
+  { path: 'contact', component: ContactComponent, data: {title: 'Lulus-Recipes: Contact'}},
+  { path: 'about', component: AboutComponent, data: {title: 'Lulus-Recipes: About'}}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [Title]
+  providers: []
 })
 export class AppRoutingModule { }
