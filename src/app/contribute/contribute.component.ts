@@ -16,7 +16,6 @@ export class ContributeComponent implements OnInit {
   
   constructor(fb: FormBuilder,private email: EmailService){
     this.contributeForm = fb.group({
-      'image': ['',Validators.required],
       'name': ['',Validators.compose([Validators.required, Validators.minLength(4)])],
       'description': ['',Validators.compose([Validators.required, Validators.minLength(10)])],
       'contributor': ['',Validators.compose([Validators.required, Validators.minLength(4)])],
