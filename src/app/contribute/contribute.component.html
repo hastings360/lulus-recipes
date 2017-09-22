@@ -11,7 +11,7 @@
             
             <label for="image">Upload your image:</label>
             <input id="image" type="file" class="form-control">
-            <div class="error-message" *ngIf="!contributeForm.controls['image'].valid">Please upload your image</div>
+            <div class="error-message" >Please upload your image</div>
             
             <label for="name">Name:</label>
             <input id="name" type="text" class="form-control" [formControl]="contributeForm.controls['name']" [class.error]="!contributeForm.controls['name'].valid">
