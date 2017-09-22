@@ -28,7 +28,7 @@ router.post('/recipe-mail', (req, res) =>{
               });
               //send mail using the object passed in
               function SendMyMail(x){
-                //iterates through contents and assigned string value to contents variable
+                //iterates through contents and assigns string value to contents variable
                 let contents;
                 for(let y in x){
                   contents += ("<p>" + x[y] + "</p>");
