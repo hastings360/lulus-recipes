@@ -7,12 +7,10 @@
           [formGroup]="contributeForm" 
           (ngSubmit)="onSubmit(contributeForm.value)">
 
-          <div>image uploader</div>
-
           <div class="form-group">  
             
             <label for="image">Upload your image:</label>
-            <input id="image" type="file" class="form-control" [formControl]="contributeForm.controls['image']" [class.error]="!contributeForm.controls['image'].valid">
+            <input id="image" type="file" class="form-control">
             <div class="error-message" *ngIf="!contributeForm.controls['image'].valid">Please upload your image</div>
             
             <label for="name">Name:</label>
