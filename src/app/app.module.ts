@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing-module';
 
+
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SingleFullViewComponent } from './meal-displays/single-full-view/single-full-view.component';
@@ -41,7 +42,8 @@ import { MealImageViewComponent } from './meal-displays/meal-image-view/meal-ima
     HttpModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   providers: [Title, DbTalkerService, EmailService],
   bootstrap: [AppComponent]
