@@ -16,7 +16,6 @@ router.post('/recipe-mail', (req, res) =>{
   res.send('recipe-mail api works');
   console.log('recipe-mail accessed');
   let mailData = req.body;
-  console.log(mailData);
   SendMyMail(mailData);
 });
               //reusable transporter object for mail
@@ -29,7 +28,6 @@ router.post('/recipe-mail', (req, res) =>{
               });
               //send mail using the object passed in
               function SendMyMail(x){
-                console.log(x);
                 //iterates through contents and assigns string value to contents variable
                 let contents;
                 for(let y in x){
@@ -40,12 +38,7 @@ router.post('/recipe-mail', (req, res) =>{
                   from: contents.email,
                   to: 'hastings360@gmail.com',
                   subject: contents.name, 
-                  html: "<h1>Lulu's Recipe Message</h1>" + contents,
-                  attachments: [
-                    {
-                      content: x[0]
-                    }
-                  ]
+                  html: "<h1>Lulu's Recipe Message</h1>" + contents
                 };
                 //sends
                 transporter.sendMail(mailOptions,(error,info) =>{
