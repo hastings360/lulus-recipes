@@ -39,7 +39,12 @@ router.post('/recipe-mail', (req, res) =>{
                   from: contents.email,
                   to: 'hastings360@gmail.com',
                   subject: contents.name, 
-                  html: "<h1>Lulu's Recipe Message</h1>" + contents
+                  html: "<h1>Lulu's Recipe Message</h1>" + contents,
+                  attachments: [
+                    {
+                      content: x[0]
+                    }
+                  ]
                 };
                 //sends
                 transporter.sendMail(mailOptions,(error,info) =>{
