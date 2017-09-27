@@ -12,8 +12,7 @@ import { EmailService } from '../email.service';
 })
 export class ContributeComponent implements OnInit {
 
-    public contributeForm: FormGroup;
-    public image: any = document.getElementById('image');
+  public contributeForm: FormGroup;
   
   constructor(fb: FormBuilder,private email: EmailService){
     this.contributeForm = fb.group({
@@ -42,7 +41,10 @@ export class ContributeComponent implements OnInit {
   
   onSubmit(x:FormGroup):void{
     let mailReady = this.imageToSend && x;
-    this.email.sendMail(x);
+    console.log(mailReady);
+    this.email.sendMail(mailReady);
+
+
     if(this.email.emailVerify.hasError === true){
       this.error = true;
     }else{
@@ -55,8 +57,6 @@ export class ContributeComponent implements OnInit {
     reader.onload = this.imageLoader;
     reader.readAsDataURL(x[0]);
     this.imageToSend = x[0];
-
-    
 
     this.imageUploaded = true;
   }
