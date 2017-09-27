@@ -5,7 +5,7 @@
 <section id="contact-form-container" class="col-md-8 col-md-offset-2">
   <form   id="contact-form"
           [formGroup]="contactForm" 
-          (ngSubmit)="onSubmit(contactForm.value)">
+          (ngSubmit)="onSubmit(contactForm.value, imageToSend)">
 
           <div class="form-group">    
             <label for="name">Name:</label>

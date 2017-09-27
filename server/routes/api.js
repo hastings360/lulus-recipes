@@ -16,6 +16,7 @@ router.post('/recipe-mail', (req, res) =>{
   res.send('recipe-mail api works');
   console.log('recipe-mail accessed');
   let mailData = req.body;
+  console.log(mailData);
   SendMyMail(mailData);
 });
               //reusable transporter object for mail

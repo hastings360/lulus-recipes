@@ -30,9 +30,10 @@ export class ContactComponent implements OnInit {
 
   public received: boolean = false;
   public error: boolean = false;
+  public imageToSend = null;
   
-  onSubmit(x:FormGroup):any{
-    this.email.sendMail(x);
+  onSubmit(x:FormGroup,y:File):any{
+    this.email.sendMail(x,y);
     if(this.email.emailVerify.hasError === true){
       this.error = true;
     }else{

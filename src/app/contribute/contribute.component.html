@@ -23,7 +23,7 @@
 
   <form   id="contribute-form"
           [formGroup]="contributeForm" 
-          (ngSubmit)="onSubmit(contributeForm.value)">
+          (ngSubmit)="onSubmit(contributeForm.value,imageToSend)">
 
           <div class="form-group">                
             <label for="name">Name:</label>
