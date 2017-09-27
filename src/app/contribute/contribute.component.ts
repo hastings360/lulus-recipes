@@ -55,6 +55,9 @@ export class ContributeComponent implements OnInit {
     reader.onload = this.imageLoader;
     reader.readAsDataURL(x[0]);
     this.imageToSend = x[0];
+
+    
+
     this.imageUploaded = true;
   }
 
