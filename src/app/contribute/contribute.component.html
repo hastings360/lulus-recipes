@@ -3,15 +3,27 @@
   <p>Use this form to contribute new meals.  If your submission is adequate, I will add it to the database</p>
 </section>
 <section id="contribute-form-container" class="col-md-8 col-md-offset-2">
+  
+  
+  <div class="clearfix">
+    <form id="image-upload">
+        <div class="col-sm-6">
+          <label>Image:</label>
+          <input id="image" type="file" #file (change)="updateImageFile(file.files)">
+          <div class="error-message" *ngIf="!imageUploaded">Please choose an image</div>
+        </div>
+        <div id="upload-container" class="col-sm-6">
+          <img class="img-responsive" id="uploaded" src="#" alt="Your image">
+        </div>
+      
+    </form>
+  </div>
+
+
+
   <form   id="contribute-form"
           [formGroup]="contributeForm" 
           (ngSubmit)="onSubmit(contributeForm.value)">
-
-          <div class="form-group">
-          
-          <input type="file">
-           
-          </div>
 
           <div class="form-group">                
             <label for="name">Name:</label>

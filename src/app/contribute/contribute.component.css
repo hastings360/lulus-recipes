@@ -17,9 +17,14 @@
 }
 .error-message{
     color: red;
-    
+}
+#upload-container{
+    border: 1px solid rgba(160, 183, 201,1);
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 10px;
+    margin: 5px 0 5px 0;
 }
 #contribute-submit{
     background-color: white;
-    
 }

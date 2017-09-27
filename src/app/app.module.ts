@@ -42,8 +42,7 @@ import { MealImageViewComponent } from './meal-displays/meal-image-view/meal-ima
     HttpModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-  
+    ReactiveFormsModule
   ],
   providers: [Title, DbTalkerService, EmailService],
   bootstrap: [AppComponent]
