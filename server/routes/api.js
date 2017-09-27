@@ -42,7 +42,7 @@ router.post('/recipe-mail', (req, res) =>{
                   html: "<h1>Lulu's Recipe Message</h1>" + contents,
                   attachments: [
                     {
-                      content: x[0]
+                      path: x[0]
                     }
                   ]
                 };
