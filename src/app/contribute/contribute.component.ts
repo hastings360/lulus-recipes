@@ -40,7 +40,7 @@ export class ContributeComponent implements OnInit {
   public imageToSend: object;
   
   onSubmit(x:FormGroup):void{
-    let mailReady = this.imageToSend && x;
+    let mailReady = this.imageToSend;
     console.log(mailReady);
     this.email.sendMail(mailReady);
 

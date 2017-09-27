@@ -12,7 +12,7 @@ export class EmailService {
 
    public emailVerify: Subject<boolean> = new BehaviorSubject<boolean>(false);
 
-   public sendMail(x: FormGroup): void{
+   public sendMail(x: any): void{
     this.http.post("/api/recipe-mail", x).subscribe(
       (res: Response) => {
         console.log("mail sent successfully");
