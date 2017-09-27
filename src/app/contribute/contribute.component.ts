@@ -39,9 +39,9 @@ export class ContributeComponent implements OnInit {
   public imageUploaded: boolean = false;
   public imageToSend: File;
   
-  onSubmit(x:FormGroup,y:File):void{
+  onSubmit(x:FormGroup):void{
     
-    this.email.sendMail(x,y);
+    this.email.sendMail(x);
 
 
     if(this.email.emailVerify.hasError === true){

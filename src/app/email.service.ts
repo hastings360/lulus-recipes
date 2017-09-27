@@ -12,8 +12,8 @@ export class EmailService {
 
    public emailVerify: Subject<boolean> = new BehaviorSubject<boolean>(false);
 
-   public sendMail(x: FormGroup, y: File): void{
-    let mailData = x && y;
+   public sendMail(x: FormGroup): void{
+    let mailData = x;
     
     this.http.post("/api/recipe-mail", mailData).subscribe(
       (res: Response) => {
