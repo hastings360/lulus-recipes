@@ -28,3 +28,34 @@
 #contribute-submit{
     background-color: white;
 }
+.mail-message{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    width: 98%;
+    height: 98%;
+    background-color: black;
+    border-radius: 65px;
+    padding: 150px 50px;
+    text-align: center;
+    font-size: 30px;
+    
+}
+.mail-message a{
+    font-size: 25px;
+    background: rgba(160, 183, 201,1);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+.mail-message a:hover{
+    background-color: rgba(149,160,20,1);
+}
+@media screen and (max-width: 667px){
+    .mail-message{
+        font-size: 20px;
+    }
+    .mail-message a{
+        font-size: 15px;
+    }
+}

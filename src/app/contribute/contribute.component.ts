@@ -20,7 +20,7 @@ export class ContributeComponent implements OnInit {
       'description': ['',Validators.compose([Validators.required, Validators.minLength(10)])],
       'contributor': ['',Validators.compose([Validators.required, Validators.minLength(4)])],
       'ingredients': ['',Validators.compose([Validators.required, Validators.minLength(4)])],
-      'date': ['',Validators.compose([Validators.required, Validators.pattern(/^\d{2}[./-]\d{2}[./-]\d{4}$/)])],
+      'date': ['',Validators.compose([Validators.required, Validators.pattern(/^\d{2}[./-]\d{2}[./-]\d{2,4}$/)])],
       'estimatedCalories': ['',Validators.compose([Validators.required, Validators.minLength(2)])],
       'directions': ['',Validators.compose([Validators.required, Validators.minLength(15)])],
       'category': ['',Validators.compose([Validators.required, Validators.minLength(4)])]
