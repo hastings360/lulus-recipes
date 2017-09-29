@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const upload = multer({dest: 'tmp-uploads/'})
+const upload = multer({dest: '/tmp/'})
 
 const nodemailer = require('nodemailer');//mail API
 const MongoClient = require('mongodb').MongoClient;//db API
