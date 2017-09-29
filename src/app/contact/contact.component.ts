@@ -32,8 +32,13 @@ export class ContactComponent implements OnInit {
   public error: boolean = false;
   public imageToSend = null;
   
-  onSubmit(x:FormGroup):any{
-    this.email.sendMail(x);
+  onSubmit(x:FormGroup):void{
+    let data = JSON.stringify(x);
+    let mailObject = new FormData();
+    
+    mailObject.append('data',data);//appends data to mailObject
+
+    this.email.sendMail(mailObject);
     if(this.email.emailVerify.hasError === true){
       this.error = true;
     }else{

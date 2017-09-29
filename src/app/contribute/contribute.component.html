@@ -29,7 +29,7 @@
             <label for="name">Name:</label>
             <input id="name" type="text" class="form-control" [formControl]="contributeForm.controls['name']" [class.error]="!contributeForm.controls['name'].valid">
             <div class="error-message" *ngIf="!contributeForm.controls['name'].valid">Please type your full name</div>
-           
+          
             <label for="description">Description:</label>
             <input type="text" class="form-control" [formControl]="contributeForm.controls['description']" [class.error]="!contributeForm.controls['description'].valid">
             <div class="error-message" *ngIf="!contributeForm.controls['description'].valid">Please provide a brief description of the meal</div>
@@ -64,6 +64,16 @@
           </div>
   </form>
 
+  <!--splash page for email sent-->
+  <div *ngIf="received" class="mail-message img-responsive">
+    <p>Thank you for making an inquiry!</p>
+    <a routerLink="/welcome">Back to welcome page</a>
+  </div>
+  <!--splash page for email sent-->
+  <div *ngIf="error" class="mail-message img-responsive">
+    <p>There seems to be an issue with the email server.  Please try again soon.</p>
+    <a routerLink="/welcome">Back to home page</a>
+  </div>
  
 
 </section>

@@ -25,9 +25,6 @@ export class ContributeComponent implements OnInit {
       'directions': ['',Validators.compose([Validators.required, Validators.minLength(15)])],
       'category': ['',Validators.compose([Validators.required, Validators.minLength(4)])]
     })
-    
-
-    
   }
 
   ngOnInit() {
@@ -37,33 +34,38 @@ export class ContributeComponent implements OnInit {
   public received: boolean = false;
   public error: boolean = false;
   public imageUploaded: boolean = false;
-  public imageToSend: File;
+  public imageToAPI;
   
   onSubmit(x:FormGroup):void{
+    let data = JSON.stringify(x);//Converts FormGroup data into JSON string for http.post
+    let mailObject = new FormData();
+
+    mailObject.append('data',data);//appends data to mailObject
+    mailObject.append('image',this.imageToAPI);//appends data to mailObject
     
-    this.email.sendMail(x);
-
-
+    this.email.sendMail(mailObject);
     if(this.email.emailVerify.hasError === true){
       this.error = true;
     }else{
       this.received = true;
     }
   }
-
+  //excepts and reads the image file object
   updateImageFile(x:object):void{
+    //sets uploaded image to view
     let reader = new FileReader;
     reader.onload = this.imageLoader;
     reader.readAsDataURL(x[0]);
-    this.imageToSend = x[0];
-
     this.imageUploaded = true;
-  }
 
+    //save image to imageToAPI
+    this.imageToAPI = x[0];
+  }
+  //Loads image to the img element
   imageLoader(e:any):any{
     let imageTag = document.getElementById('uploaded');
     imageTag.setAttribute('src', e.target.result);
   }
- 
+
 }
 

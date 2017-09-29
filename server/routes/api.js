@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const upload = multer({dest: 'tmp-uploads/'})
 
 const nodemailer = require('nodemailer');//mail API
 const MongoClient = require('mongodb').MongoClient;//db API
@@ -12,11 +14,14 @@ router.get('/', (req, res) => {
 });
 
 //mail API
-router.post('/recipe-mail', (req, res) =>{
+router.post('/recipe-mail', upload.single('image'),(req, res) =>{
   res.send('recipe-mail api works');
   console.log('recipe-mail accessed');
-  let mailData = req.body;
-  SendMyMail(mailData);
+  
+  let mailData = JSON.parse(req.body.data);//form data: transforms JSON string back to object
+  let imageFile = req.file;//attachment file
+  
+  SendMyMail(mailData,imageFile);
 });
               //reusable transporter object for mail
               const transporter = nodemailer.createTransport({
@@ -27,19 +32,30 @@ router.post('/recipe-mail', (req, res) =>{
                 }
               });
               //send mail using the object passed in
-              function SendMyMail(x){
+              function SendMyMail(x,y){
                 //iterates through contents and assigns string value to contents variable
                 let contents;
                 for(let y in x){
                   contents += ("<p>" + x[y] + "</p>");
                 };
                 //email data
-                let mailOptions = {
-                  from: contents.email,
-                  to: 'hastings360@gmail.com',
-                  subject: contents.name, 
-                  html: "<h1>Lulu's Recipe Message</h1>" + contents
-                };
+                let mailOptions;  //code sets value according to attachment being present or not
+                if(y == undefined){
+                  mailOptions = {
+                    from: contents.email,
+                    to: 'hastings360@gmail.com',
+                    subject: contents.name, 
+                    html: "<h1>Lulu's Recipe Message</h1>" + contents
+                    };
+                  }else{
+                    mailOptions = {
+                      from: contents.email,
+                      to: 'hastings360@gmail.com',
+                      subject: contents.name, 
+                      html: "<h1>Lulu's Recipe Message</h1>" + contents,
+                      attachments: [{filename: y.originalname,path: y.path}]
+                    };
+                  }
                 //sends
                 transporter.sendMail(mailOptions,(error,info) =>{
                   if(error){

@@ -12,10 +12,9 @@ export class EmailService {
 
    public emailVerify: Subject<boolean> = new BehaviorSubject<boolean>(false);
 
-   public sendMail(x: FormGroup): void{
-    let mailData = x;
+   public sendMail(x: any): void{
     
-    this.http.post("/api/recipe-mail", mailData).subscribe(
+    this.http.post("/api/recipe-mail", x).subscribe(
       (res: Response) => {
         console.log("mail sent successfully");
       },
@@ -28,4 +27,5 @@ export class EmailService {
       }*/  //Not sure this needs to be here
     );
   }
+
 }
