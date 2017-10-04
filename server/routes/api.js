@@ -36,7 +36,6 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                 //iterates through contents and assigns string value to contents variable
                 let contents;
                 for(let y in data){
-                  console.log(data);
                   contents += ("<p>" + data[y] + "</p>");
                 };
                 //email data
@@ -50,9 +49,9 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                     };
                   }else{
                     mailOptions = {
-                      from: contents.email,
+                      
                       to: 'hastings360@gmail.com',
-                      subject: contents.name, 
+                      
                       html: "<h1>Lulu's Recipe Message</h1>" + contents,
                       attachments: [{filename: file.originalname,path: file.path}]
                     };
