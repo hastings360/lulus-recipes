@@ -38,21 +38,16 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                 for(let y in data){
                   contents += ("<p>" + data[y] + "</p>");
                 };
-                console.log(typeof contents.email);
                 //email data
                 let mailOptions;  //code sets value according to attachment being present or not
                 if(file == undefined){
                   mailOptions = {
-                    from: contents.email,
-                    to: 'hastings360@gmail.com',
-                    subject: contents.name, 
+                    to: 'hastings360@gmail.com', 
                     html: "<h1>Lulu's Recipe Message</h1>" + contents
                     };
                   }else{
                     mailOptions = {
-                      from: contents.email,
-                      to: 'hastings360@gmail.com',
-                      subject: contents.name, 
+                      to: 'hastings360@gmail.com', 
                       html: "<h1>Lulu's Recipe Message</h1>" + contents,
                       attachments: [{filename: file.originalname,path: file.path}]
                     };
