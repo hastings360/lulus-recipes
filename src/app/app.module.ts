@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { MealInfoViewComponent } from './meal-displays/meal-info-view/meal-info-view.component';
 import { MealImageViewComponent } from './meal-displays/meal-image-view/meal-image-view.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MealImageViewComponent } from './meal-displays/meal-image-view/meal-ima
     ContactComponent,
     AboutComponent,
     MealInfoViewComponent,
-    MealImageViewComponent
+    MealImageViewComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

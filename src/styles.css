@@ -48,22 +48,6 @@ header{
     header a:hover{
         text-decoration: none;
     }
-    .search-container{
-        padding-top: 10px;
-        text-align: right;
-    }
-    .search-container input{
-        border: none;
-        border-radius: 20px;
-        height: 30px;
-        padding-left: 10px;
-        outline: none;
-    }
-    .search-container button{
-        background: none;
-        border-style: none;
-    }
-
 /*main content*/    
 #content-container{
     margin-top: 10px;
