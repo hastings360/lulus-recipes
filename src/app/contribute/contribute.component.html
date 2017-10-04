@@ -14,6 +14,7 @@
         </div>
         <div id="upload-container" class="col-sm-6">
           <img class="img-responsive" id="uploaded" src="#" alt="Your image">
+          <div class="error-message" *ngIf="imageToLarge">That image is too large!<br>Limit: 200 kb</div>
         </div>
       
     </form>

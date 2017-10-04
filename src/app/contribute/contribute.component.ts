@@ -34,6 +34,7 @@ export class ContributeComponent implements OnInit {
   public received: boolean = false;
   public error: boolean = false;
   public imageUploaded: boolean = false;
+  public imageToLarge: boolean = false;
   public imageToAPI;
   
   onSubmit(x:FormGroup):void{
@@ -55,8 +56,13 @@ export class ContributeComponent implements OnInit {
     //sets uploaded image to view
     let reader = new FileReader;
     reader.onload = this.imageLoader;
-    reader.readAsDataURL(x[0]);
-    this.imageUploaded = true;
+    
+    if(x[0].size < 200000){
+      reader.readAsDataURL(x[0]);
+      this.imageUploaded = true;
+    }else{
+      this.imageToLarge = true;
+    }
 
     //save image to imageToAPI
     this.imageToAPI = x[0];
