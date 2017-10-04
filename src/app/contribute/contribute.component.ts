@@ -60,6 +60,7 @@ export class ContributeComponent implements OnInit {
     if(x[0].size < 200001){
       reader.readAsDataURL(x[0]);
       this.imageUploaded = true;
+      this.imageToLarge = false;
     }else{
       this.imageToLarge = true;
       this.imageUploaded = false;
