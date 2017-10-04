@@ -36,6 +36,7 @@ export class ContributeComponent implements OnInit {
   public imageUploaded: boolean = false;
   public imageToLarge: boolean = false;
   public imageToAPI;
+  public imageTag = document.getElementById('uploaded');
   
   onSubmit(x:FormGroup):void{
     let data = JSON.stringify(x);//Converts FormGroup data into JSON string for http.post
@@ -62,6 +63,7 @@ export class ContributeComponent implements OnInit {
       this.imageUploaded = true;
     }else{
       this.imageToLarge = true;
+      this.imageTag.setAttribute('src', '');
     }
 
     //save image to imageToAPI
@@ -69,8 +71,7 @@ export class ContributeComponent implements OnInit {
   }
   //Loads image to the img element
   imageLoader(e:any):any{
-    let imageTag = document.getElementById('uploaded');
-    imageTag.setAttribute('src', e.target.result);
+    this.imageTag.setAttribute('src', e.target.result);
   }
 
 }
