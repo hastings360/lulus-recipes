@@ -32,15 +32,16 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                 }
               });
               //send mail using the object passed in
-              function SendMyMail(x,y){
+              function SendMyMail(data,file){
                 //iterates through contents and assigns string value to contents variable
                 let contents;
-                for(let y in x){
-                  contents += ("<p>" + x[y] + "</p>");
+                for(let y in data){
+                  console.log(data);
+                  contents += ("<p>" + data[y] + "</p>");
                 };
                 //email data
                 let mailOptions;  //code sets value according to attachment being present or not
-                if(y == undefined){
+                if(file == undefined){
                   mailOptions = {
                     from: contents.email,
                     to: 'hastings360@gmail.com',
@@ -53,7 +54,7 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                       to: 'hastings360@gmail.com',
                       subject: contents.name, 
                       html: "<h1>Lulu's Recipe Message</h1>" + contents,
-                      attachments: [{filename: y.originalname,path: y.path}]
+                      attachments: [{filename: file.originalname,path: file.path}]
                     };
                   }
                 //sends

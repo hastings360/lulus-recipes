@@ -40,7 +40,7 @@ export class ContributeComponent implements OnInit {
   onSubmit(x:FormGroup):void{
     let data = JSON.stringify(x);//Converts FormGroup data into JSON string for http.post
     let mailObject = new FormData();
-
+        
     mailObject.append('data',data);//appends data to mailObject
     mailObject.append('image',this.imageToAPI);//appends data to mailObject
     
