@@ -42,16 +42,16 @@ router.post('/recipe-mail', upload.single('image'),(req, res) =>{
                 let mailOptions;  //code sets value according to attachment being present or not
                 if(file == undefined){
                   mailOptions = {
-                    from: contents.email,
+                    from: JSON.stringify(contents.email),
                     to: 'hastings360@gmail.com',
-                    subject: contents.name, 
+                    subject: JSON.stringify(contents.name), 
                     html: "<h1>Lulu's Recipe Message</h1>" + contents
                     };
                   }else{
                     mailOptions = {
-                      
+                      from: JSON.stringify(contents.email),
                       to: 'hastings360@gmail.com',
-                      
+                      subject: JSON.stringify(contents.name), 
                       html: "<h1>Lulu's Recipe Message</h1>" + contents,
                       attachments: [{filename: file.originalname,path: file.path}]
                     };
