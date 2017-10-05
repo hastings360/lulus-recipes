@@ -1,7 +1,8 @@
 .brief-stack{
     margin-bottom: 15px;
-}
-.img-circle{
     height: 100px;
     width: 100px;
+}
+.img-circle{
+    overflow: hidden;
 }
