@@ -1,8 +1,10 @@
 <div class="col-xs-12">
-  <div class="col-xs-4 brief-image-outer">
+  <div class="col-xs-4 brief-image-outer circle">
+    <a [routerLink]="['/single-full-view', briefMeal.name]"> 
       <div class="brief-image-inner">
-        <a [routerLink]="['/single-full-view', briefMeal.name]"><img class="img-circle" src="../../../assets/images/{{briefMeal.imageName}}"></a>
+        <img class="img-meal" src="../../../assets/images/{{briefMeal.imageName}}">
       </div>
+    </a>
   </div>
 
   <div class="col-xs-8">
