@@ -2,9 +2,10 @@
     margin-bottom: 15px;
     height: 100px;
     overflow: hidden;
+    text-align: center;
 }
 .img-circle{
-    
+    text-align: center;
     height: 100%;
 
 }
