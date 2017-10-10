@@ -1,7 +1,7 @@
 <div class="search-container col-sm-4">
-  <form (ngSubmit)='runSearch(queryText)'>
-    <input id="query" type="text" placeholder="Search" onchange='this.queryText'>
-    <button class="logo" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+  <form [formGroup]='searchForm' (ngSubmit)='runSearch(searchForm.value)'>
+      <input type="text" placeholder="Search" [formControl]="searchForm.controls['query']">
+      <button class="logo" type="submit"><span class="glyphicon glyphicon-search"></span></button>
   </form>
   <div class="search-results hide">
     <ul>

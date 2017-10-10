@@ -1,6 +1,7 @@
+import { Meal } from './../meal.model';
 import { DbTalkerService } from '../db-talker.service';
 
-import { FormGroup } from '@angular/forms';
+import { FormGroup,FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,15 +13,24 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
 
   public queryText: String;
+  public searchForm: FormGroup;
+  public queryResults: Meal[];
+  public data: any;
+  private dbTalker: DbTalkerService;
 
-  constructor() { 
-    
+  constructor(fb: FormBuilder) { 
+    this.searchForm = fb.group({
+      'query': []
+    })
   }
 
   ngOnInit() {
   }
 
-  runSearch(x:String):void{
-    console.log(this.queryText);
+  runSearch(x:FormGroup):void{
+    //Pulls in favorites from database service and sets favorites
+    this.dbTalker.QuerySearchMeals(x,this.data,val =>{
+      return this.queryResults = val;
+    });
   }
 }

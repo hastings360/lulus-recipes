@@ -91,6 +91,26 @@ export class DbTalkerService {
       })
   };
 
+  //calls the query-search-by-name, which returns a list of matching meals
+  public QuerySearchMeals(query,out,callback):any{
+    out = out || "init query search by name";
+    console.log(query);
+    
+    
+
+
+    /*
+    this.http.get("/api/query-search-by-name", requestOptions).subscribe(
+      (res: Response) => {
+        out = res.json();
+        return callback(out);
+      },
+      (err: any) => {
+        console.log("on db-talker component QuerySearchMeals");
+        console.log(err);
+      })*/
+  };
+
   
 }
 /*= [
