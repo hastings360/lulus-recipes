@@ -98,7 +98,6 @@ export class DbTalkerService {
     this.http.get("/api/query-search-by-input", query).subscribe(
       (res: Response) => {
         out = res.json();
-        
         return callback(out);
       },
       (err: any) => {

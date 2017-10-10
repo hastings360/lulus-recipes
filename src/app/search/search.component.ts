@@ -30,9 +30,9 @@ export class SearchComponent implements OnInit {
   runSearch(incomingQueryObject:FormGroup):void{
     
     let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
-    let query = queryToJSON.query;
+    let queryRequest = queryToJSON.query;
     
-    this.dbTalker.QuerySearchMeals(query,this.data,val =>{
+    this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
       return this.queryResults = val;
     });
   }
