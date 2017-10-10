@@ -145,6 +145,7 @@ router.get('/query-search-by-input',(req, res) =>{
     db.collection("meals").find({name: req.query.searchText}).toArray(function(err, result){
         if(err) throw err;
         db.close();
+        console.log(result);
         return res.send(result);
     });
   });
