@@ -135,5 +135,19 @@ router.get('/recipe-meal-by-name',(req, res) =>{
     });
   });
 });
+
+//search query database API
+router.get('/query-search-by-input',(req, res) =>{
+  console.log('query-search-by-input queried');
+
+  MongoClient.connect(url, function(err, db){
+    if(err) throw err;
+    db.collection("meals").find({name: req.query.name}).toArray(function(err, result){
+        if(err) throw err;
+        db.close();
+        return res.send(result);
+    });
+  });
+});
             
 module.exports = router;

@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   public searchForm: FormGroup;
   public queryResults: Meal[];
   public data: any;
-  private dbTalker: DbTalkerService;
+  public dbTalker: DbTalkerService;
 
   constructor(fb: FormBuilder) { 
     this.searchForm = fb.group({
@@ -27,9 +27,12 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  runSearch(x:FormGroup):void{
-    //Pulls in favorites from database service and sets favorites
-    this.dbTalker.QuerySearchMeals(x,this.data,val =>{
+  runSearch(incomingQueryObject:FormGroup):void{
+    
+    let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
+    let query = queryToJSON.query;
+    
+    this.dbTalker.QuerySearchMeals(query,this.data,val =>{
       return this.queryResults = val;
     });
   }

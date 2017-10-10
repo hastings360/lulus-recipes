@@ -93,22 +93,18 @@ export class DbTalkerService {
 
   //calls the query-search-by-name, which returns a list of matching meals
   public QuerySearchMeals(query,out,callback):any{
-    out = out || "init query search by name";
-    console.log(query);
-    
-    
+    out = out || "init query search by input";
 
-
-    /*
-    this.http.get("/api/query-search-by-name", requestOptions).subscribe(
+    this.http.get("/api/query-search-by-input", query).subscribe(
       (res: Response) => {
         out = res.json();
+        
         return callback(out);
       },
       (err: any) => {
         console.log("on db-talker component QuerySearchMeals");
         console.log(err);
-      })*/
+      })
   };
 
   
