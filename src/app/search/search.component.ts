@@ -16,9 +16,9 @@ export class SearchComponent implements OnInit {
   public searchForm: FormGroup;
   public queryResults: Meal[];
   public data: any;
-  public dbTalker: DbTalkerService;
+  
 
-  constructor(fb: FormBuilder) { 
+  constructor(fb: FormBuilder,private dbTalker: DbTalkerService) { 
     this.searchForm = fb.group({
       'query': []
     })
