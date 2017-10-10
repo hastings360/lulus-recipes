@@ -96,11 +96,11 @@ export class DbTalkerService {
     out = out || "init query search by input";
 
     let params: URLSearchParams = new URLSearchParams();
-      params.set('searchText', query);
+      params.set('name', query);
     let requestOptions = new RequestOptions();
       requestOptions.search = params;
 
-    this.http.get("/api/query-search-by-input", requestOptions).subscribe(
+    this.http.get("/api/recipe-meal-by-name", requestOptions).subscribe(
       (res: Response) => {
         out = res.json();
         console.log(out);
