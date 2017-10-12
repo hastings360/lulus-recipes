@@ -38,6 +38,8 @@ export class SearchComponent implements OnInit {
       queryResults = val;
     })
 
+    console.log(queryResults);
+    
     for(let y in queryResults){
       console.log(y);
       //this.resultsList.appendChild(y.name);
