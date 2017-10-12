@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   public queryText: String;
   public searchForm: FormGroup;
   public data: any;
+  private queryResults: Meal[];
   private resultsList = document.getElementById("results");
   
 
@@ -31,16 +32,16 @@ export class SearchComponent implements OnInit {
     
     let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
     let queryRequest = queryToJSON.query;
-    let queryResults: Meal[];
+    
     let resultsList = document.getElementById("results");
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-      queryResults = val;
+      this.queryResults = val;
     })
 
-    console.log(queryResults);
-    
-    for(let y in queryResults){
+    console.log(this.queryResults);
+
+    for(let y in this.queryResults){
       console.log(y);
       //this.resultsList.appendChild(y.name);
     }
