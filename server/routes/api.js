@@ -142,7 +142,7 @@ router.get('/query-search-by-input',(req, res) =>{
   
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
-    db.collection("meals").find(req.query.searchText).toArray(function(err, result){
+    db.collection("meals").find({name: req.query.searchText}).toArray(function(err, result){
         if(err) throw err;
         db.close();
         return res.send(result);
