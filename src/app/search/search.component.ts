@@ -36,13 +36,12 @@ export class SearchComponent implements OnInit {
     let resultsList = document.getElementById("results");
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-        
-        if(val[0] = true){
+        console.log(val);
+        if(val[0].name = true){
           this.queryResults = val;
           this.resultsShow = true;
         }else{
           this.resultsShow = false;
-
         }
     })
 
