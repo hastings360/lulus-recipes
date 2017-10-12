@@ -35,12 +35,12 @@ export class SearchComponent implements OnInit {
     let resultsList = document.getElementById("results");
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-      console.log(val);
-      return queryResults = val;
+      queryResults = val;
     })
 
     for(let y in queryResults){
       console.log(y);
+      //this.resultsList.appendChild(y.name);
     }
   }
 }
