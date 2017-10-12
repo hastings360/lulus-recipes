@@ -139,13 +139,12 @@ router.get('/recipe-meal-by-name',(req, res) =>{
 //search query database API
 router.get('/query-search-by-input',(req, res) =>{
   console.log('query-search-by-input queried');
-  console.log(req.query.searchText);
+  
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
     db.collection("meals").find({name: req.query.searchText}).toArray(function(err, result){
         if(err) throw err;
         db.close();
-        console.log(result);
         return res.send(result);
     });
   });
