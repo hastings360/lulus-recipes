@@ -38,6 +38,7 @@ export class SearchComponent implements OnInit {
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
       
       for(let y in val){
+        console.log(val);
         console.log(y);
         
       }
