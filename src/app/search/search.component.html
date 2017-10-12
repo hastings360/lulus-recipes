@@ -3,10 +3,12 @@
       <input type="text" placeholder="Search" [formControl]="searchForm.controls['query']">
       <button class="logo" type="submit"><span class="glyphicon glyphicon-search"></span></button>
   </form>
-  <div class="search-results hide">
-    <ul id="results">
-      
+  <div class="search-results" *ngIf="resultsShow">
+    <ul>
+      <li *ngFor="let result of queryResults">
+        <a [routerLink]="['/single-full-view', result.name]">{{result.name}}</a>
+      </li>
     </ul>
-    <h3 class="more logo">MORE...</h3>
+    <!--<h3 class="more logo">MORE...</h3>-->
   </div>
 </div>

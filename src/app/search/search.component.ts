@@ -15,8 +15,8 @@ export class SearchComponent implements OnInit {
   public queryText: String;
   public searchForm: FormGroup;
   public data: any;
-  private queryResults: Meal[];
-  private resultsList = document.getElementById("results");
+  public queryResults: Meal[];
+  public resultsShow: Boolean = false;
   
 
   constructor(fb: FormBuilder,private dbTalker: DbTalkerService) { 
@@ -36,12 +36,14 @@ export class SearchComponent implements OnInit {
     let resultsList = document.getElementById("results");
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-      
-      for(let y in val){
-        console.log(val);
-        console.log(y);
         
-      }
+        if(val[0] = true){
+          this.queryResults = val;
+          this.resultsShow = true;
+        }else{
+          this.resultsShow = false;
+
+        }
     })
 
     
