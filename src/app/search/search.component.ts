@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
         console.log(val);
-        if(val[0].name = true){
+        if(val[0].name == true){
           this.queryResults = val;
           this.resultsShow = true;
         }else{
