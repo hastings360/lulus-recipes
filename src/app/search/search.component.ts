@@ -36,15 +36,15 @@ export class SearchComponent implements OnInit {
     let resultsList = document.getElementById("results");
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-      this.queryResults = val;
-      console.log(val);
+      
+      for(let y in val){
+        console.log(y);
+        
+      }
     })
 
-    console.log(this.queryResults);
+    
 
-    for(let y in this.queryResults){
-      console.log(y);
-      //this.resultsList.appendChild(y.name);
-    }
+    
   }
 }
