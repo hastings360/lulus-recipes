@@ -32,6 +32,9 @@
     left: 1%;
     overflow-y: scroll;
 }
+::-webkit-scrollbar{
+    width: 0px;
+}
 .search-results ul{
     list-style: none;
     text-align: center;
@@ -40,10 +43,10 @@
     color: white;
 }
 .search-results a{
-    color: #deb887;
+    color: #95a014;
 }
 .search-results a:hover{
-    color: #95a014;
+    color: #deb887;
 }
 .more{
     text-align: center;
