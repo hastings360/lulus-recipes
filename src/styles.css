@@ -20,12 +20,7 @@ header{
         font: oblique 50px eurostile;
         width: 200px;
     }
-    @media screen and(max-width: 767px){
-        #logoh1{
-            font-size: 20px;
-            text-align: left;
-        }
-    }
+    
     .logo{
         color: rgba(160, 183, 201,1);
         -webkit-box-sizing: content-box;
