@@ -48,7 +48,7 @@ export class SearchComponent implements OnInit {
   }
 
   resetResults():void{
-    this.queryResults = null;
+    this.queryResults = [];
     this.resultsShow = false;
   }
 }
