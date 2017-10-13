@@ -33,20 +33,19 @@ export class SearchComponent implements OnInit {
     let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
     let queryRequest = queryToJSON.query;
     
-    let resultsList = document.getElementById("results");
-    
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-        console.log(val);
         if(val.length >= 1){
           this.queryResults = val;
           this.resultsShow = true;
         }else{
-          this.resultsShow = false;
+          this.queryResults.push({ _id: 1,imageName:"",name: "No results found",description: "",contributor: "",
+          ingredients: [""],contributionDate: "",estimatedCalories: 0,directions: "",category: "",likes: 0});
         }
     })
+  }
 
-    
-
-    
+  resetResults():void{
+    this.queryResults = null;
+    this.resultsShow = false;
   }
 }

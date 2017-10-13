@@ -1,6 +1,6 @@
 <div class="search-container col-sm-4">
   <form [formGroup]='searchForm' (ngSubmit)='runSearch(searchForm.value)'>
-      <input type="text" placeholder="Search" [formControl]="searchForm.controls['query']">
+      <input type="text" placeholder="Search" [formControl]="searchForm.controls['query']" (click)="resetResults()">
       <button class="logo" type="submit"><span class="glyphicon glyphicon-search"></span></button>
   </form>
   <div class="search-results" *ngIf="resultsShow">
