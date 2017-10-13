@@ -42,7 +42,6 @@ export class SearchComponent implements OnInit {
           this.queryResults.push({ _id: 1,imageName:"",name: "No results found",description: "",contributor: "",
           ingredients: [""],contributionDate: "",estimatedCalories: 0,directions: "",category: "",likes: 0});
           this.resultsShow = true;
-          alert('trigger');
         }
     })
   }
