@@ -34,7 +34,7 @@ export class SearchComponent implements OnInit {
     let queryRequest = queryToJSON.query;
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-        if(val.length >= 1){
+        if(val[0].description == true){
           this.queryResults = val;
           this.resultsShow = true;
         }else{
