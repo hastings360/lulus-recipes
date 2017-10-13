@@ -8,9 +8,9 @@ body{
 header{
     padding-left: 90px !important;
 }
-@media screen and (max-width: 667px){
+@media screen and (max-width: 767px){
     header{
-        padding-left: 10px !important;
+        padding-left: 0 !important;
     }
 }
     #logoh1{
@@ -19,6 +19,12 @@ header{
         cursor: pointer;
         font: oblique 50px eurostile;
         width: 200px;
+    }
+    @media screen and(max-width: 767px){
+        #logoh1{
+            font-size: 20px;
+            text-align: left;
+        }
     }
     .logo{
         color: rgba(160, 183, 201,1);
