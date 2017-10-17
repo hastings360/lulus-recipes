@@ -36,9 +36,11 @@ export class SearchComponent implements OnInit {
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
       console.log(val.length);  
       if(val.length > 0){
+          this.queryResults = [];
           this.queryResults = val;
           this.resultsShow = true;
         }else{
+          this.queryResults = [];
           this.queryResults.push({ _id: 1,imageName:"",name: "No results found",description: "",contributor: "",
           ingredients: [""],contributionDate: "",estimatedCalories: 0,directions: "",category: "",likes: 0});
           this.resultsShow = true;
