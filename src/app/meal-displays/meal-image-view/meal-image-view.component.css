@@ -6,3 +6,8 @@
 .divider{
     border-color: rgba(149,160,20,1);
 }
+@media screen and (max-width: 767px){
+    .meal-image{
+        width: 110%;
+    }
+}
