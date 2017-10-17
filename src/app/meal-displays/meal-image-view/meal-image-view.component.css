@@ -1,3 +1,6 @@
+.img-container{
+    overflow-y: hidden;
+}
 .meal-image{
     height: 150px;
     width: 100%;
@@ -8,6 +11,6 @@
 }
 @media screen and (max-width: 767px){
     .meal-image{
-        width: 110%;
+        width: 130%;
     }
 }
