@@ -16,4 +16,8 @@ export class MealInfoViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  addLike(){
+    alert("hello");
+  }
+
 }
