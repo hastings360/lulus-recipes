@@ -9,5 +9,8 @@
     color: rgba(149,160,20,1);
 }
 .like{
+    margin-left: 10px;
+}
+.like-text{
     font-size: 10px;
 }
