@@ -17,7 +17,8 @@ export class MealInfoViewComponent implements OnInit {
   }
 
   addLike(){
-    alert("hello");
+    localStorage.setItem('lulu-liked','liked');
+    alert(localStorage.getItem('lulu-liked'));
   }
 
 }

@@ -11,6 +11,7 @@
 .like{
     margin-left: 10px;
     margin-right: 2px;
+    cursor: pointer;
 }
 .like-text{
     font-size: 10px;
