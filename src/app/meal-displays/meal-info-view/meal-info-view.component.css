@@ -24,6 +24,7 @@
 }
 .already-liked:hover{
     outline: none;
+    border: none;
 }
 .like-text{
     font-size: 10px;
