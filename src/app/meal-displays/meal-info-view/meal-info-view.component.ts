@@ -12,13 +12,15 @@ export class MealInfoViewComponent implements OnInit {
 @Input() specifiedMeal: Meal;
 
 private liked: string = localStorage.getItem('lulu-liked');
-private likeImage: object = document.getElementsByClassName('like');
-private likeText: object = document.getElementsByClassName('like-text');
+private likeImage = document.getElementById('like');
+private likeText = document.getElementById('like-text');
 
   constructor() { 
     if(this.liked == 'liked'){
-      console.log(this.likeImage);
+      console.log(typeof this.likeImage);
       console.log(this.likeText);
+
+      this.likeText.innerHTML = "Liked";
 
     }
   }
