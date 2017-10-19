@@ -12,6 +12,11 @@
     margin-left: 10px;
     margin-right: 2px;
     cursor: pointer;
+    flood-color: red;
+
+}
+.like:hover{
+    outline: none;
 }
 .like-text{
     font-size: 10px;
