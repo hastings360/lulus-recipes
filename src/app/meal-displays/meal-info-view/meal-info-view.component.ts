@@ -17,8 +17,9 @@ private likeText = document.getElementById('like-text');
 
   constructor() { 
     if(this.liked == 'liked'){
-      this.likeText.innerHTML = "Liked";
-      
+      console.log(this.likeImage);
+      console.log(this.likeText);
+
     }
   }
 
