@@ -18,6 +18,6 @@
 #like:hover{
     outline: none;
 }
-#like-text{
+.like-text{
     font-size: 10px;
 }
