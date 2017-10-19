@@ -13,7 +13,7 @@ export class MealInfoViewComponent implements OnInit {
 
 private liked: string = localStorage.getItem('lulu-liked');
 private likeImage: object = document.getElementById('like');
-private likeText: object = document.getElementById('like-text');
+private likeText: object = document.getElementsByClassName('like-text');
 
   constructor() { 
     if(this.liked == 'liked'){
