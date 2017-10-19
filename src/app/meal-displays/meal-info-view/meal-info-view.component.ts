@@ -20,7 +20,7 @@ private likeText = document.getElementById('like-text');
       console.log(typeof this.likeImage);
       console.log(this.likeText);
 
-      this.likeText.innerHTML = "Liked";
+      console.log(document.getElementById('like-text'));
 
     }
   }
