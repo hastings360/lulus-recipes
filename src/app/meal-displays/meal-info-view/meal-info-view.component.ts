@@ -11,10 +11,10 @@ export class MealInfoViewComponent implements OnInit {
 
 @Input() specifiedMeal: Meal;
 
-public liked: string;
+public liked: string = localStorage.getItem(this.specifiedMeal._id);
 
   constructor() { 
-    console.log(this.specifiedMeal);
+    
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ public liked: string;
 
   addLike(){
     //localStorage.setItem(this.specifiedMeal._id,'liked');
-    
+    console.log(this.specifiedMeal._id);
   }
 
 }
