@@ -11,7 +11,7 @@ export class MealInfoViewComponent implements OnInit {
 
 @Input() specifiedMeal: Meal;
 
-public liked: string = localStorage.getItem(this.specifiedMeal._id);
+//public liked: string = localStorage.getItem(this.specifiedMeal._id);
 
   constructor() { 
     
