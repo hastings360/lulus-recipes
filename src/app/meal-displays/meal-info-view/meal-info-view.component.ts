@@ -12,7 +12,7 @@ export class MealInfoViewComponent implements OnInit {
 @Input() specifiedMeal: Meal;
 
 private liked: string = localStorage.getItem('lulu-liked');
-private likeImage: object = document.getElementById('like');
+private likeImage: object = document.getElementsByClassName('like');
 private likeText: object = document.getElementsByClassName('like-text');
 
   constructor() { 

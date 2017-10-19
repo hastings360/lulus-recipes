@@ -8,14 +8,14 @@
 .head-text{
     color: rgba(149,160,20,1);
 }
-#like{
+.like{
     margin-left: 10px;
     margin-right: 2px;
     cursor: pointer;
     flood-color: red;
 
 }
-#like:hover{
+.like:hover{
     outline: none;
 }
 .like-text{
