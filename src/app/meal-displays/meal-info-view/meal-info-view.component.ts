@@ -22,7 +22,7 @@ public liked: string = '';//localStorage.getItem(this.specifiedMeal._id);
 
   addLike(){
     //localStorage.setItem(this.specifiedMeal._id,'liked');
-    console.log(this.specifiedMeal.category);
+    console.log(this.specifiedMeal);
   }
 
 }
