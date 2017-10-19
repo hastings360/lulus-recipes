@@ -14,11 +14,7 @@ export class MealInfoViewComponent implements OnInit {
 public liked: boolean = false;
 
   constructor() { 
-    if(localStorage.getItem(this.specifiedMeal._id) == null){
-      this.liked = true;
-    }else{
-      this.liked = false;
-    }
+    
   }
 
   ngOnInit() {
