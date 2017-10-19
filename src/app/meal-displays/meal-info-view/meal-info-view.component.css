@@ -15,7 +15,14 @@
     flood-color: red;
 
 }
-.like:hover{
+.already-liked{
+    margin-left: 10px;
+    margin-right: 2px;
+    cursor: pointer;
+    flood-color: red;
+
+}
+.already-liked:hover{
     outline: none;
 }
 .like-text{
