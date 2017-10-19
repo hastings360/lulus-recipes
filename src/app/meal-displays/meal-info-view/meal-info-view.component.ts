@@ -11,13 +11,13 @@ export class MealInfoViewComponent implements OnInit {
 
 @Input() specifiedMeal: Meal;
 
-public liked: boolean = false;
+public liked: any;
 
   constructor() { 
   }
 
   ngOnInit() {
-    console.log(this.specifiedMeal._id);
+    this.liked = localStorage.getItem(this.specifiedMeal._id);
   }
 
   addLike(){
