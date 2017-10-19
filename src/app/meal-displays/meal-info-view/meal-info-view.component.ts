@@ -14,15 +14,14 @@ export class MealInfoViewComponent implements OnInit {
 public liked: boolean = false;
 
   constructor() { 
-    
   }
 
   ngOnInit() {
+    console.log(this.specifiedMeal._id);
   }
 
   addLike(){
     localStorage.setItem(this.specifiedMeal._id,'liked');
-    
   }
 
 }
