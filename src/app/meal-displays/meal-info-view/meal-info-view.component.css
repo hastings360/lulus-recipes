@@ -12,15 +12,11 @@
     margin-left: 10px;
     margin-right: 2px;
     cursor: pointer;
-    flood-color: red;
-
 }
 .already-liked{
     margin-left: 10px;
     margin-right: 2px;
-    cursor: pointer;
-    flood-color: red;
-
+    cursor: default;
 }
 .already-liked:hover{
     border: none !important;
