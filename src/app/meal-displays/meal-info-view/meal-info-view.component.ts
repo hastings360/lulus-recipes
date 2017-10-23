@@ -26,7 +26,7 @@ public dbTalker: DbTalkerService;
     localStorage.setItem(this.specifiedMeal._id,'liked');
     this.liked = localStorage.getItem(this.specifiedMeal._id);
     
-    console.log(this.specifiedMeal._id);
+    console.log(this.specifiedMeal._id + "meal-info");
     this.dbTalker.IncreaseLikes(this.specifiedMeal._id);
   }
 

@@ -114,13 +114,13 @@ export class DbTalkerService {
   //ads one to specified meal by _id
   public IncreaseLikes(query):any{
     console.log(query);
-    this.http.post("/api/increase-likes", query).subscribe(
+    /*this.http.post("/api/increase-likes", query).subscribe(
       (res: Response) => {
         console.log("increase likes success");
       },
       (err: any) => {
         console.log("increase likes operation failed");
-      })
+      })*/
   }
 }
 /*= [
