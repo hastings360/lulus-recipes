@@ -156,6 +156,7 @@ router.post('/increase-likes',(req, res) =>{
   console.log(req.query._id);
   console.log(req.query.body);
   console.log(req.query.toString());
+  console.log(req.query.query);
   
 
   /*MongoClient.connect(url, function(err, db){
