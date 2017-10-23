@@ -150,13 +150,10 @@ router.get('/query-search-by-input',(req, res) =>{
   });
 });
 
-//increase likes by mealId
+//increase likes by mealID
 router.post('/increase-likes',(req, res) =>{
-  res.send('increase-likes queried');
+  console.log('increase-likes accessed');
   
-  console.log(req.query);
-  console.log(req.query.mealID);
-
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
     db.meals.findAndModify({query:{_id: req.query.mealID},update:{$inc:{likes:1}}}).toArray(function(err, result){

@@ -115,9 +115,9 @@ export class DbTalkerService {
   public IncreaseLikes(query):any{
     
     let params: URLSearchParams = new URLSearchParams();
-    params.set('mealID', query);
-  let requestOptions = new RequestOptions();
-    requestOptions.search = params;
+      params.set('mealID', query);
+    let requestOptions = new RequestOptions();
+      requestOptions.search = params;
     
     this.http.post("/api/increase-likes", requestOptions).subscribe(
       (res: Response) => {
