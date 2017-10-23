@@ -153,11 +153,9 @@ router.get('/query-search-by-input',(req, res) =>{
 //increase likes by mealId
 router.post('/increase-likes',(req, res) =>{
   res.send('increase-likes queried');
-  console.log(req);
-  console.log(req.query);
-  console.log(req.query.body);
-  console.log(req.query._id);
-  console.log(req.query.data);
+  
+  console.log(req.body);
+ 
   
   
 
