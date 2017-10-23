@@ -121,7 +121,7 @@ export class DbTalkerService {
       (err: any) => {
         console.log("increase likes operation failed");
       })*/
-  }
+  };
 }
 /*= [
         new Meal(
