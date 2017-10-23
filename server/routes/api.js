@@ -154,7 +154,7 @@ router.get('/query-search-by-input',(req, res) =>{
 router.post('/increase-likes',(req, res) =>{
   res.send('increase-likes queried');
   
-  console.log(req.body.data);
+  console.log(req.query._id);
  
   
   
