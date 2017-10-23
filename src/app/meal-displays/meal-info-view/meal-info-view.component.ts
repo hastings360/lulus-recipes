@@ -13,9 +13,9 @@ export class MealInfoViewComponent implements OnInit {
 @Input() specifiedMeal: Meal;
 
 public liked: any;
-public dbTalker: DbTalkerService;
 
-  constructor() { 
+
+  constructor(private dbTalker: DbTalkerService) { 
   }
 
   ngOnInit() {
