@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Meal } from './../../meal.model';
+import { DbTalkerService } from './../../db-talker.service';
 
 @Component({
   selector: 'app-meal-info-view',
@@ -12,6 +13,7 @@ export class MealInfoViewComponent implements OnInit {
 @Input() specifiedMeal: Meal;
 
 public liked: any;
+public dbTalker: DbTalkerService;
 
   constructor() { 
   }
@@ -23,8 +25,8 @@ public liked: any;
   addLike(){
     localStorage.setItem(this.specifiedMeal._id,'liked');
     this.liked = localStorage.getItem(this.specifiedMeal._id);
-    console.log(this.specifiedMeal);
     
+    this.dbTalker.IncreaseLikes(this.specifiedMeal._id);
   }
 
 }

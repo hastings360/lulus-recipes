@@ -111,7 +111,16 @@ export class DbTalkerService {
       })
   };
 
-  
+  //ads one to specified meal by _id
+  public IncreaseLikes(mealId){
+    this.http.post("/api/increase-likes", mealId).subscribe(
+      (res: Response) => {
+        console.log("increase likes success");
+      },
+      (err: any) => {
+        console.log("increase likes operation failed");
+      })
+  }
 }
 /*= [
         new Meal(
