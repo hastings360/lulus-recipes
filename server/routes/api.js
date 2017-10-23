@@ -152,7 +152,7 @@ router.get('/query-search-by-input',(req, res) =>{
 
 //increase likes by mealId
 router.post('/increase-likes',(req, res) =>{
-  console.log('increase-likes queried');
+  res.send('increase-likes queried');
   
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
