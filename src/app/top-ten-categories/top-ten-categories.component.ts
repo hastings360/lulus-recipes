@@ -15,8 +15,11 @@ export class TopTenCategoriesComponent implements OnInit {
   constructor(private dbTalker: DbTalkerService){
     //Pulls in favorites from database service and sets favorites
     dbTalker.SearchTopTenCategories(this.data,val =>{
+      console.log(val);
       return this.topTenCategories = val;
+      
     });
+    
 }
 
   ngOnInit() { }
