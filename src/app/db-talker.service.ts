@@ -112,13 +112,13 @@ export class DbTalkerService {
   };
 
   //ads one to specified meal by _id
-  public IncreaseLikes(query):any{
-    
+  public IncreaseLikes(query): void{
+    console.log(query);
     let params: URLSearchParams = new URLSearchParams();
       params.set('mealID', query);
     let requestOptions = new RequestOptions();
       requestOptions.search = params;
-    
+    console.log(requestOptions);
     this.http.post("/api/increase-likes", requestOptions).subscribe(
       (res: Response) => {
         console.log("increase likes success");
