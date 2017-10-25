@@ -26,7 +26,8 @@ public liked: any;
     localStorage.setItem(this.specifiedMeal._id,'liked');
     this.liked = localStorage.getItem(this.specifiedMeal._id);
     
-    this.dbTalker.IncreaseLikes(this.specifiedMeal._id);
+    
+    this.dbTalker.IncreaseLikes(this.specifiedMeal);
   }
 
 }
