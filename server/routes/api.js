@@ -154,7 +154,7 @@ router.get('/query-search-by-input',(req, res) =>{
 router.post('/increase-likes',(req, res) =>{
   res.send("increase likes api works");
   console.log('increase-likes accessed');
-  console.log(req);
+  console.log(req.body.data);
   
 
 
