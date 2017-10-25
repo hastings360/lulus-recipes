@@ -113,11 +113,10 @@ export class DbTalkerService {
 
   //ads one to specified meal by _id
   public IncreaseLikes(query): void{
-    console.log(query);
-    console.log(typeof query);
+    let toBeSent = JSON.stringify(query);
     
     
-    this.http.post("/api/increase-likes", query).subscribe(
+    this.http.post("/api/increase-likes", toBeSent).subscribe(
       (res: Response) => {
         console.log("increase likes success");
         console.log(res);
