@@ -155,8 +155,8 @@ router.post('/increase-likes',(req, res) =>{
   res.send("increase likes api works");
   console.log('increase-likes accessed');
   
-  let incoming = JSON.parse(req.body.data);
-  console.log(incoming);
+  console.log(JSON.stringify(req.body));
+  console.log(req.body);
 
   
 
