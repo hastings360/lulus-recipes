@@ -120,6 +120,7 @@ export class DbTalkerService {
     this.http.post("/api/increase-likes", query).subscribe(
       (res: Response) => {
         console.log("increase likes success");
+        console.log(res);
       },
       (err: any) => {
         console.log("increase likes operation failed");
