@@ -152,25 +152,17 @@ router.get('/query-search-by-input',(req, res) =>{
 
 //increase likes by mealID
 router.post('/increase-likes',(req, res) =>{
-  res.send(req.body);
+  res.send("increase-likes api works");
   console.log('increase-likes accessed');
-  
-  
-  console.log(req.body);
 
-  
-
-  
-
-
-  /*MongoClient.connect(url, function(err, db){
+  MongoClient.connect(url, function(err, db){
     if(err) throw err;
-    db.meals.findAndModify({query:{_id: req.query.mealID},update:{$inc:{likes:1}}}).toArray(function(err, result){
+    db.meals.findAndModify({query:{_id: req.body._id},update:{$inc:{likes:1}}}).toArray(function(err, result){
         if(err) throw err;
         db.close();
         return res.send(result);
     });
-  });*/
+  });
 });
             
 module.exports = router;
