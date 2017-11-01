@@ -116,7 +116,7 @@ export class DbTalkerService {
     
     this.http.post("/api/increase-likes", mealLiked).subscribe(
       (res: Response) => {
-        console.log(res);
+        console.log(res.status);
       },
       (err: any) => {
         console.log("increase likes operation failed");
