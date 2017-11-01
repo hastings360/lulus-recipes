@@ -159,9 +159,13 @@ router.post('/increase-likes',(req, res) =>{
     db.collection("meals").findAndModify(
       {query:{_id: req.body._id},update:{$inc:{likes:1}}},
       (err) =>{
-        if(err) throw err;
-        db.close();
-        return res.send("1 like added to" + req.body._id);
+        if(err){
+          throw err;
+          db.close();
+        }else{
+          db.close();
+          return res.send("1 like added to" + req.body._id);
+        }
       }
     );
   });
