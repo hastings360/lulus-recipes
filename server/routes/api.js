@@ -154,11 +154,16 @@ router.get('/query-search-by-input',(req, res) =>{
 router.post('/increase-likes',(req, res) =>{
   console.log('increase-likes accessed');
 
-  MongoClient.connect(url, function(err, db){
+  MongoClient.connect(url, (err, db) =>{
     if(err) throw err;
-    db.collection("meals").findAndModify({query:{_id: req.body._id},update:{$inc:{likes:1}}});
-    db.close();
-    return res.send("1 like added to" + req.body._id);
+    db.collection("meals").findAndModify(
+      {query:{_id: req.body._id},update:{$inc:{likes:1}}},
+      (err) =>{
+        if(err) throw err;
+        db.close();
+        return res.send("1 like added to" + req.body._id);
+      }
+    );
   });
 });
             
