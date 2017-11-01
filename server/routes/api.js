@@ -156,18 +156,11 @@ router.post('/increase-likes',(req, res) =>{
 
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
-    db.collection("meals").findAndModify(
-      {query:{_id: req.body._id},update:{$inc:{likes:1}}},
-      function (err) {
-        if(err){
-          db.close();
-          throw err;
-        }else{
-          db.close();
-          return res.send("1 like added to" + req.body._id);
-        }
-      }
-    );
+    db.collection("meals").find({ $text: { $search: req.query.searchText}}).toArray(function(err, result){
+        if(err) throw err;
+        db.close();
+        return res.send(result);
+    });
   });
 });
             
