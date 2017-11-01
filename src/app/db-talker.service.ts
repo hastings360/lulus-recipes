@@ -112,9 +112,9 @@ export class DbTalkerService {
   };
 
   //ads one to specified meal by _id
-  public IncreaseLikes(body): void{
+  public IncreaseLikes(mealLiked): void{
     
-    this.http.post("/api/increase-likes", body).subscribe(
+    this.http.post("/api/increase-likes", mealLiked).subscribe(
       (res: Response) => {
         console.log(res);
       },
