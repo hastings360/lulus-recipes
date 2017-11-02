@@ -162,14 +162,14 @@ router.post('/increase-likes',(req, res) =>{
     
     
     
-    db.collection("meals").find({ $text: { $search: req.query.searchText}}).toArray(function(err, result){
+    db.collection("meals").find({ $text: { $search: req.body._id}}).toArray(function(err, result){
         if(err) throw err;
         db.close();
         return res.send(result);
     });
 
 
-    
+
   });
 });
             
