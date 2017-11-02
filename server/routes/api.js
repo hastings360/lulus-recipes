@@ -155,11 +155,11 @@ router.get('/query-search-by-input',(req, res) =>{
 router.post('/increase-likes',(req, res) =>{
   console.log('increase-likes accessed');
 
-  //let objectId = new ObjectId(req.body._id);
+  let objectId = new ObjectId(req.body._id);
 
   MongoClient.connect(url, function(err, db){
     if(err) throw err;
-    db.collection("meals").update({"_id": req.body._id},{$inc:{"likes": 1}}, function(err, result){
+    db.collection("meals").update({"_id": objectId},{$inc:{"likes": 1}}, (err, result) =>{
       if(err) throw err;
       db.close();
       return res.send(result);
