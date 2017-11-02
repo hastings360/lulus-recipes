@@ -162,7 +162,8 @@ router.post('/increase-likes',(req, res) =>{
     db.collection("meals").update({"_id": objectId},{$inc:{"likes": 1}}, (err, result) =>{
       if(err) throw err;
       db.close();
-      return res.send(result + "likes increased");
+      console.log(req.body.name + " increased by 1");
+      return res.send(result);
     });
   });
 });
