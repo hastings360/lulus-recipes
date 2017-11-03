@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
   public data: any;
   public queryResults: Meal[];
   public resultsShow: Boolean = false;
+  public resultsFound: Boolean = false;
+  public resultsNotFound: Boolean = false;
   
 
   constructor(fb: FormBuilder,private dbTalker: DbTalkerService) { 
@@ -39,11 +41,13 @@ export class SearchComponent implements OnInit {
           this.queryResults = [];
           this.queryResults = val;
           this.resultsShow = true;
+          this.resultsFound = true;
         }else{
           this.queryResults = [];
           this.queryResults.push({ _id: 1,imageName:"",name: "No results found",description: "",contributor: "",
           ingredients: [""],contributionDate: "",estimatedCalories: 0,directions: "",category: "",likes: 0});
           this.resultsShow = true;
+          this.resultsNotFound = true;
         }
     })
   }
