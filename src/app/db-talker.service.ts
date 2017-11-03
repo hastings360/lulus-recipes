@@ -112,11 +112,13 @@ export class DbTalkerService {
   };
 
   //ads one to specified meal by _id
-  public IncreaseLikes(mealLiked): void{
-    
+  public IncreaseLikes(mealLiked,out,callback): any{
+    out = out || "init increase likes";
+
     this.http.post("/api/increase-likes", mealLiked).subscribe(
       (res: Response) => {
-        console.log(res.status);
+        out = res;
+        return callback(out);
       },
       (err: any) => {
         console.log("increase likes operation failed");

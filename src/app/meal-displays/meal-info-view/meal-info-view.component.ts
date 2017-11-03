@@ -13,6 +13,7 @@ export class MealInfoViewComponent implements OnInit {
 @Input() specifiedMeal: Meal;
 
 public liked: any;
+public data: any;
 
 
   constructor(private dbTalker: DbTalkerService) { 
@@ -27,7 +28,9 @@ public liked: any;
     this.liked = localStorage.getItem(this.specifiedMeal._id);
     
     
-    this.dbTalker.IncreaseLikes(this.specifiedMeal);
+    this.dbTalker.IncreaseLikes(this.specifiedMeal, this.data, val =>{
+      console.log
+    });
   }
 
 }
