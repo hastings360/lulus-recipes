@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
 
   public queryText: String;
+  private queryRequest: String = "null";
   public searchForm: FormGroup;
   public data: any;
   public queryResults: Meal[];
@@ -35,8 +36,8 @@ export class SearchComponent implements OnInit {
     let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
     let queryRequest = queryToJSON.query;
     
-    this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
-      console.log(val.length);  
+    this.dbTalker.QuerySearchMeals(this.queryRequest,this.data,val => {
+        
       if(val.length > 0){
           this.queryResults = [];
           this.queryResults = val;
