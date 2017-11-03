@@ -42,12 +42,14 @@ export class SearchComponent implements OnInit {
           this.queryResults = val;
           this.resultsShow = true;
           this.resultsFound = true;
+          this.resultsNotFound = false;
         }else{
           this.queryResults = [];
           this.queryResults.push({ _id: 1,imageName:"",name: "No results found",description: "",contributor: "",
           ingredients: [""],contributionDate: "",estimatedCalories: 0,directions: "",category: "",likes: 0});
           this.resultsShow = true;
           this.resultsNotFound = true;
+          this.resultsFound = false;
         }
     })
   }
