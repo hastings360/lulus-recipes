@@ -5,7 +5,7 @@ const upload = multer({dest: '/tmp/'})
 
 const nodemailer = require('nodemailer');//mail API
 const MongoClient = require('mongodb').MongoClient;//db API
-const url = "mongodb://larry:205111l%40localhost:27017/lulus-recipes";//db API
+const url = "mongodb://larry:205111lh@localhost:27017/lulus-recipes";//db API
 const ObjectId = require('mongodb').ObjectId;
 let data;//db API
 
