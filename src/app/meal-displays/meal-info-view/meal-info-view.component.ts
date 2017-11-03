@@ -31,8 +31,8 @@ public data: any;
     this.dbTalker.IncreaseLikes(this.specifiedMeal, this.data, val =>{
       if(val == 200){
         this.dbTalker.SearchMealByName(this.specifiedMeal.name, this.data, val=>{
-          this.specifiedMeal = val;
-          console.log(val);
+          this.specifiedMeal.likes = val[0].likes;
+          console.log(val[0].likes);
         });
       };
     });
