@@ -29,8 +29,9 @@ public data: any;
     
     
     this.dbTalker.IncreaseLikes(this.specifiedMeal, this.data, val =>{
-      console.log(this.data);
-      console.log(val);
+      if(val == 200){
+        console.log(this.specifiedMeal);
+      };
     });
   }
 
