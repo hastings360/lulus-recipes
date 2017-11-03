@@ -34,7 +34,9 @@ export class SearchComponent implements OnInit {
     
     let queryToJSON = JSON.parse(JSON.stringify(incomingQueryObject));
     let queryRequest = queryToJSON.query;
-    console.log(queryRequest);
+    if(queryRequest == null){
+      queryRequest = "null";
+    }
     
     this.dbTalker.QuerySearchMeals(queryRequest,this.data,val => {
         
