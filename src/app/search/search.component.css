@@ -16,6 +16,16 @@
     padding-left: 10px;
     outline: none;
 }
+@media screen and (max-width: 400px){
+    .search-container input{
+        height: 20px;
+        width: 100px;
+    }
+    .search-results{
+        width: 100px;
+        height: 140px;
+    }
+}
 .search-container button{
     background: none;
     border-style: none;
@@ -32,6 +42,7 @@
     left: 1%;
     overflow-y: scroll;
 }
+
 ::-webkit-scrollbar{
     width: 0px;
 }
