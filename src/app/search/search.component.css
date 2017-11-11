@@ -21,14 +21,13 @@
         height: 20px;
         width: 100px;
     }
-
 }
 .search-container button{
     background: none;
     border-style: none;
 }
 .search-results{
-    width: 100%;
+    width: 150px;
     min-height: 100px;
     border: solid 1px white;
     background-color: bisque;
