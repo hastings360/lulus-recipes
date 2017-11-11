@@ -23,6 +23,7 @@
     }
     .search-results{
         width: 150px;
+        font-size: 1em;
     }
 }
 .search-container button{
