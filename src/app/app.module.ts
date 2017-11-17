@@ -40,11 +40,9 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
   providers: [Title, DbTalkerService, EmailService],
   bootstrap: [AppComponent]
